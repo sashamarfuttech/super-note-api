@@ -2,7 +2,7 @@
 
 namespace SuperNote.Infrastructure;
 
-public static class DependencyInjection
+public static class InfrastructureServices
 {
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
     {

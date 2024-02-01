@@ -12,7 +12,13 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="MediatR" Version="12.2.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Configuration\Commands\" />
+      <Folder Include="Notes\CreateNote\" />
     </ItemGroup>
 
 </Project>
