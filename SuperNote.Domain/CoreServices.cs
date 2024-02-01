@@ -3,7 +3,7 @@ using SuperNote.Infrastructure.Notes;
 
 namespace SuperNote.Infrastructure;
 
-public static class CoreServices
+public static class DomainServices
 {
     public static IServiceCollection AddDomainServices(this IServiceCollection services)
     {
