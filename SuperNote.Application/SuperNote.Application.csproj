@@ -8,6 +8,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\SuperNote.Domain\SuperNote.Domain.csproj" />
+      <ProjectReference Include="..\SuperNote.Infrastructure\SuperNote.Infrastructure.csproj" />
     </ItemGroup>
 
     <ItemGroup>
