@@ -1,19 +1,32 @@
 ﻿using MediatR;
-using SuperNote.Application.Notes.GetNotes;
+using Microsoft.AspNetCore.Mvc;
+using SuperNote.Application.Notes.CreateNote;
+using SuperNote.Application.Notes.GetNotesList;
 
 namespace SuperNote.WebApi.Endpoints;
+
+public class CreateNoteRequest
+{
+    public string Text { get; set; }
+}
 
 public static class NotesModule
 {
     public static void AddNotesEndpoints(this IEndpointRouteBuilder app)
     {
-        app.MapGet("/note/", async (IMediator mediator) =>
+        app.MapPost("/note", async (IMediator mediator,
+            [FromBody] CreateNoteRequest request) =>
         {
-            GetNotesQuery query = new (Guid.NewGuid());
+            await mediator.Send(new CreateNoteCommand(request.Text));
 
-            var note = await mediator.Send(query);
-            
-            return Results.Ok(note);
+            return Results.Ok();
+        });
+        
+        app.MapGet("/notes", async (IMediator mediator) =>
+        {
+            var notes = await mediator.Send(new GetNotesListQuery());
+
+            return Results.Ok(notes);
         });
     }
 }

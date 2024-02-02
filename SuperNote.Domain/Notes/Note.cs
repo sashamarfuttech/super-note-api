@@ -2,9 +2,19 @@
 
 public class Note
 {
-    public NoteId Id { get; set; }
+    public Note()
+    {
+    }
+    
+    public Note(string text)
+    {
+        Id = new NoteId(Guid.NewGuid());
+        Text = text;
+    }
+    
+    public NoteId Id { get; }
 
-    public string Text { get; set; } = string.Empty;
+    public string Text { get; } = string.Empty;
 
-    public DateTime LastModified { get; set; }
+    public DateTime LastModified { get; }
 }

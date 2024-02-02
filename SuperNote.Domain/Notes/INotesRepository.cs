@@ -2,13 +2,6 @@
 
 public interface INotesRepository
 {
-    Task<Note> GetNoteAsync(NoteId noteId);
-}
-
-public class NotesRepository : INotesRepository
-{
-    public Task<Note> GetNoteAsync(NoteId noteId)
-    {
-        return Task.FromResult(new Note());
-    }
+    Task<IReadOnlyList<Note>> GetNotesAsync();
+    Task AddAsync(Note note);
 }

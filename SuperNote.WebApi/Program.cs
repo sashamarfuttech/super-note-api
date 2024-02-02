@@ -1,4 +1,5 @@
 using SuperNote.Application;
+using SuperNote.DataAccess;
 using SuperNote.Infrastructure;
 using SuperNote.WebApi.Endpoints;
 
@@ -11,7 +12,7 @@ builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Pr
 builder.Services
     .AddDomainServices()
     .AddApplicationServices()
-    .AddInfrastructureServices();
+    .AddDataAccessServices();
 
 var app = builder.Build();
 
