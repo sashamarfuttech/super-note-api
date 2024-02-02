@@ -8,11 +8,11 @@ namespace SuperNote.WebApi.Endpoints.Notes;
 
 [AllowAnonymous]
 [HttpPost(ApiRoutes.Notes.Create)]
-public class CreateNote : Endpoint<CreateNoteRequest, EmptyResponse>
+public class Create : Endpoint<CreateNoteRequest, EmptyResponse>
 {
     private readonly IMediator _mediator;
 
-    public CreateNote(IMediator mediator) => _mediator = mediator;
+    public Create(IMediator mediator) => _mediator = mediator;
 
     public override async Task HandleAsync(CreateNoteRequest req, CancellationToken ct)
     {

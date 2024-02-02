@@ -7,11 +7,11 @@ namespace SuperNote.WebApi.Endpoints.Notes;
 
 [AllowAnonymous]
 [HttpGet(ApiRoutes.Notes.GetList)]
-public class GetNotesList : Endpoint<EmptyRequest, IReadOnlyList<NotesListItemDto>>
+public class GetList : Endpoint<EmptyRequest, IReadOnlyList<NotesListItemDto>>
 {
     private readonly IMediator _mediator;
 
-    public GetNotesList(IMediator mediator) => _mediator = mediator;
+    public GetList(IMediator mediator) => _mediator = mediator;
 
     public override async Task HandleAsync(EmptyRequest req, CancellationToken ct)
     {
