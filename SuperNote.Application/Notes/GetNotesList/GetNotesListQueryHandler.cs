@@ -1,6 +1,5 @@
 ﻿using SuperNote.Application.Configuration.Queries;
-using SuperNote.Infrastructure.Notes;
-using System.Linq;
+using SuperNote.Domain.Notes;
 
 namespace SuperNote.Application.Notes.GetNotesList;
 

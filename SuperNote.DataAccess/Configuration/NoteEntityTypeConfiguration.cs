@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SuperNote.Infrastructure.Notes;
+using SuperNote.Domain.Notes;
 
 namespace SuperNote.DataAccess.Configuration;
 

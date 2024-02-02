@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SuperNote.DataAccess.Database;
 using SuperNote.DataAccess.Repositories;
 using SuperNote.Domain;
-using SuperNote.Infrastructure.Notes;
+using SuperNote.Domain.Notes;
 
 namespace SuperNote.DataAccess;
 

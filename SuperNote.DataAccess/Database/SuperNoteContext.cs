@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SuperNote.Infrastructure.Notes;
+using SuperNote.Domain.Notes;
 
 namespace SuperNote.DataAccess.Database;
 

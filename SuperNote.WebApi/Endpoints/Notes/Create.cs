@@ -1,6 +1,7 @@
 ﻿using FastEndpoints;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.VisualBasic;
 using SuperNote.Application.Notes.CreateNote;
 using SuperNote.WebApi.Endpoints.Notes.Models;
 

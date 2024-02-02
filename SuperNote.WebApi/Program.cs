@@ -1,14 +1,15 @@
 using FastEndpoints;
 using SuperNote.Application;
 using SuperNote.DataAccess;
-using SuperNote.Infrastructure;
-using SuperNote.WebApi.Endpoints;
+using SuperNote.Domain;
+using static SuperNote.WebApi.AssemblyReferences;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<Program>());
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(WebApi, Application));
+
 builder.Services.AddFastEndpoints();
 
 builder.Services

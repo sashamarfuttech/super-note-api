@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-namespace SuperNote.Infrastructure;
+
+namespace SuperNote.Domain;
 
 public static class DomainServices
 {

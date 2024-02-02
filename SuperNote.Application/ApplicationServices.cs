@@ -6,7 +6,7 @@ public static class ApplicationServices
 {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
-        services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(ApplicationServices).Assembly));
+        //services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(AssemblyReference.CurrentAssembly));
 
         return services;
     }

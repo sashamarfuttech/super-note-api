@@ -1,5 +1,3 @@
-﻿using SuperNote.Infrastructure.Notes;
-
-namespace SuperNote.Application.Notes.GetNotesList;
+﻿namespace SuperNote.Application.Notes.GetNotesList;
 
 public record NotesListItemDto(Guid Id, string Text, DateTime LastModified);

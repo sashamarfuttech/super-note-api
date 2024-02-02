@@ -1,4 +1,4 @@
-﻿namespace SuperNote.Infrastructure.Notes;
+﻿namespace SuperNote.Domain.Notes;
 
 public class Note
 {
