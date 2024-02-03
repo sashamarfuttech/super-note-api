@@ -1,4 +1,4 @@
-﻿namespace SuperNote.Domain;
+﻿namespace SuperNote.Domain.SharedKernel.Repository;
 
 public interface IUnitOfWork
 {

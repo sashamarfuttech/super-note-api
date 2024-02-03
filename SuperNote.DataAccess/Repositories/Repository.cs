@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SuperNote.DataAccess.Database;
-using SuperNote.Domain;
+using SuperNote.Domain.SharedKernel.AggregateRoot;
+using SuperNote.Domain.SharedKernel.Repository;
 
 namespace SuperNote.DataAccess.Repositories;
 
 public abstract class Repository<TEntity> : IRepository<TEntity> 
-    where TEntity : class
+    where TEntity : AggregateRoot
 {
     protected readonly SuperNoteContext DbContext;
 

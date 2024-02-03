@@ -1,5 +1,5 @@
 ﻿using SuperNote.DataAccess.Database;
-using SuperNote.Domain;
+using SuperNote.Domain.SharedKernel.Repository;
 
 namespace SuperNote.DataAccess;
 

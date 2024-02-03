@@ -1,6 +1,7 @@
 ﻿using SuperNote.Application.Configuration.Commands;
 using SuperNote.Domain;
 using SuperNote.Domain.Notes;
+using SuperNote.Domain.SharedKernel.Repository;
 
 namespace SuperNote.Application.Notes.CreateNote;
 

@@ -1,6 +1,8 @@
-﻿namespace SuperNote.Domain.Notes;
+﻿using SuperNote.Domain.SharedKernel.AggregateRoot;
 
-public class Note
+namespace SuperNote.Domain.Notes;
+
+public class Note : AggregateRoot
 {
     public Note(string text)
     {
