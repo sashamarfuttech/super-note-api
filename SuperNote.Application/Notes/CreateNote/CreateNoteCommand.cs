@@ -2,4 +2,4 @@
 
 namespace SuperNote.Application.Notes.CreateNote;
 
-public record CreateNoteCommand(string Text) : ICommand;
+public record CreateNoteCommand(string Text) : ICommand<Guid>;
