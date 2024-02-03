@@ -11,7 +11,7 @@ public class GetNotesListQueryHandler : IQueryHandler<GetNotesListQuery, IReadOn
 
     public async Task<IReadOnlyList<NotesListItemDto>> Handle(GetNotesListQuery request, CancellationToken cancellationToken)
     {
-        var notes = await _notesRepository.GetNotesAsync();
+        var notes = await _notesRepository.GetALl();
         
         return notes
             .Select(n => new NotesListItemDto(n.Id, n.Text, n.LastModified))

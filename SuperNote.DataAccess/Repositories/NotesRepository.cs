@@ -1,23 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SuperNote.DataAccess.Database;
+﻿using SuperNote.DataAccess.Database;
 using SuperNote.Domain.Notes;
 
 namespace SuperNote.DataAccess.Repositories;
 
-public class NotesRepository : INotesRepository
+public class NotesRepository : Repository<Note>, INotesRepository
 {
-    private SuperNoteContext _dbContext;
-    
-    public NotesRepository(SuperNoteContext dbContext) => _dbContext = dbContext;
-    
-    public async Task<IReadOnlyList<Note>> GetNotesAsync()
+    public NotesRepository(SuperNoteContext dbContext) 
+        : base(dbContext)
     {
-        var notes = await _dbContext.Notes.ToListAsync();
-        return notes;
     }
-
-    public async Task AddAsync(Note note)
-    {
-        await _dbContext.Notes.AddAsync(note);
-    }
+    
+    //TODO: specific notes queries here
 }

@@ -1,7 +1,5 @@
 ﻿namespace SuperNote.Domain.Notes;
 
-public interface INotesRepository
+public interface INotesRepository : IRepository<Note>
 {
-    Task<IReadOnlyList<Note>> GetNotesAsync();
-    Task AddAsync(Note note);
 }

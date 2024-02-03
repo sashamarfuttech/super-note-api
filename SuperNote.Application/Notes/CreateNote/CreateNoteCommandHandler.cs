@@ -21,7 +21,7 @@ public class CreateNoteCommandHandler : ICommandHandler<CreateNoteCommand>
     {
         Note note = new (request.Text);
         
-        await _notesRepository.AddAsync(note);
+        _notesRepository.Add(note);
 
         await _unitOfWork.SaveChangesAsync(cancellationToken);
     }
