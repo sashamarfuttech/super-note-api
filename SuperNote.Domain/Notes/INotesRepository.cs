@@ -1,8 +1,9 @@
-﻿using SuperNote.Domain.SharedKernel.Repository;
+﻿using Optional;
+using SuperNote.Domain.SharedKernel.Repository;
 
 namespace SuperNote.Domain.Notes;
 
 public interface INotesRepository : IRepository<Note>
 {
-    Task<Note> GetByIdAsync(NoteId noteId);
+    Task<Option<Note>> GetByIdAsync(NoteId noteId);
 }

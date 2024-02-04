@@ -1,4 +1,6 @@
-﻿using SuperNote.Application.Configuration.Queries;
+﻿using Optional;
+using Optional.Unsafe;
+using SuperNote.Application.Configuration.Queries;
 using SuperNote.Domain.Notes;
 
 namespace SuperNote.Application.Notes.GetNote;
@@ -12,7 +14,15 @@ public class GetNoteQueryHandler : IQueryHandler<GetNoteQuery, NoteDto>
     
     public async Task<NoteDto> Handle(GetNoteQuery request, CancellationToken cancellationToken)
     {
-        var note = await _notesRepository.GetByIdAsync(request.Id);
+        Option<Note> noteOption = await _notesRepository.GetByIdAsync(request.Id);
+
+        if (!noteOption.HasValue)
+        {
+            throw new Exception("not found");
+        }
+
+        var note = noteOption.ValueOrDefault();
+        
         return new NoteDto(note.Id, note.Text, note.LastModified);
     }
 }

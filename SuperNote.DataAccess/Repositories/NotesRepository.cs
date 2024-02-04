@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Optional;
 using SuperNote.DataAccess.Database;
 using SuperNote.Domain.Notes;
 
@@ -11,9 +12,9 @@ public class NotesRepository : Repository<Note>, INotesRepository
     {
     }
     
-    public async Task<Note> GetByIdAsync(NoteId noteId)
+    public async Task<Option<Note>> GetByIdAsync(NoteId noteId)
     {
         var note = await DbContext.Notes.SingleOrDefaultAsync(n => n.Id == noteId);
-        return note;
+        return note.SomeNotNull();
     }
 }
