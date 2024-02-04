@@ -27,7 +27,8 @@ if (app.Environment.IsDevelopment())
 {
 }
 
-app.UseFastEndpoints();
+app.UseFastEndpoints(x => x.Errors.UseProblemDetails());
+
 app.UseSwaggerGen();
 
 app.Run();
