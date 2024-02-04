@@ -19,7 +19,7 @@ public class GetNoteQueryHandler : IQueryHandler<GetNoteQuery, Result<NoteDto>>
 
         if (!noteOption.HasValue)
         {
-            return new NoteNotFoundError();
+            return NoteErrors.NoteNotFound;
         }
 
         var note = noteOption.ValueOrDefault();

@@ -19,12 +19,14 @@ public static class ResponseExtensions
 
         var domainError = (DomainError)result.Errors.First();
 
-        var errorType = (ErrorType)domainError.Metadata[nameof(ErrorType)];
+        var errorCode = (string)domainError.Metadata[DomainError.ErrorCodeLiteral];
 
         var errors = new List<ValidationFailure>()
         {
-            new(string.Empty, domainError.Message)
+            new(errorCode, domainError.Message)
         };
+        
+        var errorType = (ErrorType)domainError.Metadata[nameof(ErrorType)];
 
         var statusCode = errorType switch
         {
