@@ -1,4 +1,5 @@
 using FastEndpoints;
+using FastEndpoints.Swagger;
 using SuperNote.Application;
 using SuperNote.DataAccess;
 using SuperNote.Domain;
@@ -6,11 +7,14 @@ using static SuperNote.WebApi.AssemblyReferences;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddFastEndpoints();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(WebApi, Application));
 
-builder.Services.AddFastEndpoints();
+
+builder.Services.SwaggerDocument(o =>
+{
+    o.ShortSchemaNames = true;
+});
 
 builder.Services
     .AddDomainServices()
@@ -21,9 +25,9 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
 }
 
 app.UseFastEndpoints();
+app.UseSwaggerGen();
+
 app.Run();

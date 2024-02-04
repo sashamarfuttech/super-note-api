@@ -8,5 +8,6 @@ public static class ApiRoutes
     {
         public const string Create = $"{ApiPrefix}/notes";
         public const string GetList = $"{ApiPrefix}/notes";
+        public const string GetById = $"{ApiPrefix}/notes/{{noteId:guid}}";
     }
 }
