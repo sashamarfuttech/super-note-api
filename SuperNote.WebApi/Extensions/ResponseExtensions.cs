@@ -12,16 +12,7 @@ public static class ResponseExtensions
         Result<T> result,
         CancellationToken ct)
     {
-        var domainError = (DomainError)result.Errors.First();
-
-        var errorCode = (string)domainError.Metadata[DomainError.ErrorCodeLiteral];
-
-        var errors = new List<ValidationFailure>()
-        {
-            new(errorCode, domainError.Message)
-        };
-        
-        var errorType = (ErrorType)domainError.Metadata[nameof(ErrorType)];
+        var errorType = GetErrorType(result.Errors.First());
 
         var statusCode = errorType switch
         {
@@ -29,9 +20,25 @@ public static class ResponseExtensions
             _ => StatusCodes.Status500InternalServerError
         };
 
+        var failures = ToValidationFailures(result.Errors);
+
         await ep.HttpContext.Response.SendErrorsAsync(
-            errors,
+            failures,
             statusCode,
             cancellation: ct);
+
+        static ErrorType GetErrorType(IError error)
+        {
+            var domainError = (DomainError)error;
+            var type = (ErrorType)domainError.Metadata[nameof(ErrorType)];
+            return type;
+        }
+
+        static List<ValidationFailure> ToValidationFailures(List<IError> errors)
+            => errors.Select(e =>
+            {
+                var errorCode = e.Metadata[DomainError.ErrorCodeLiteral].ToString();
+                return new ValidationFailure(errorCode, e.Message);
+            }).ToList();
     }
 }
