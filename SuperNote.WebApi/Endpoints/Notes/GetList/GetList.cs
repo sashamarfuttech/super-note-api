@@ -8,8 +8,14 @@ public class GetList(IMediator mediator) : Endpoint<EmptyRequest, IReadOnlyList<
 {
     public override void Configure()
     {
-        Get(ApiRoutes.Notes.GetList);
         AllowAnonymous();
+        
+        Get(ApiRoutes.Notes.GetList);
+        
+        Summary(s =>
+        {
+            s.Summary = "Returning the list of notes.";
+        });
     }
     
     public override async Task HandleAsync(EmptyRequest req, CancellationToken ct)

@@ -2,12 +2,12 @@
 
 public static class ApiRoutes
 {
-    private const string ApiPrefix = "/api";
-    
     public static class Notes
     {
-        public const string Create = $"{ApiPrefix}/notes";
-        public const string GetList = $"{ApiPrefix}/notes";
-        public const string GetById = $"{ApiPrefix}/notes/{{noteId:guid}}";
+        public const string GroupName = nameof(Notes);
+        
+        public const string Create = $"/notes/";
+        public const string GetList = $"/notes/";
+        public const string GetById = $"/notes/{{noteId:guid}}/";
     }
 }

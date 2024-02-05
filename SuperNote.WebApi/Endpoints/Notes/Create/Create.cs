@@ -8,8 +8,14 @@ public class Create(IMediator mediator) : Endpoint<CreateNoteRequest, CreateNote
 {
     public override void Configure()
     {
-        Post(ApiRoutes.Notes.Create);
         AllowAnonymous();
+        
+        Post(ApiRoutes.Notes.Create);
+        
+        Summary(s =>
+        {
+            s.Summary = "Create a new note.";
+        });
     }
 
     public override async Task HandleAsync(CreateNoteRequest req, CancellationToken ct)
