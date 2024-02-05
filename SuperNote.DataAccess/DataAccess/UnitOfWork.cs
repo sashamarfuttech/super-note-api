@@ -1,16 +1,13 @@
 ﻿using MediatR;
-using System.Collections.Generic;
-using System.Linq;
 using SuperNote.Domain.SharedKernel.AggregateRoot;
+using SuperNote.Domain.SharedKernel.DataAccess;
 using SuperNote.Domain.SharedKernel.DomainEvents;
-using SuperNote.Domain.SharedKernel.Repository;
 
 namespace SuperNote.DataAccess.DataAccess;
 
 public class UnitOfWork : IUnitOfWork
 {
     private readonly IPublisher _publisher;
-
     private readonly SuperNoteContext _context;
 
     public UnitOfWork(

@@ -2,6 +2,6 @@
 
 public static class NoteErrors
 {
-    public static readonly NoteNotFoundError NoteNotFound = new ("Note.Not.Found", "Note not found.");
-    public static readonly NoteNotFoundError TheNoteIsEmpty = new ("The.Note.Is.Empty", "The note is empty.");
+    public static readonly NoteNotFoundError NoteNotFound = new ("note.not.found", "Note not found.");
+    public static readonly NoteNotFoundError TheNoteIsEmpty = new ("the.note.is.empty", "The note is empty.");
 }

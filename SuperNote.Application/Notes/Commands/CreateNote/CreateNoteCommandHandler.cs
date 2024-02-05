@@ -1,8 +1,7 @@
 ﻿using FluentResults;
-using Microsoft.Extensions.Logging;
 using SuperNote.Application.Abstractions.Commands;
 using SuperNote.Domain.Notes;
-using SuperNote.Domain.SharedKernel.Repository;
+using SuperNote.Domain.SharedKernel.DataAccess;
 
 namespace SuperNote.Application.Notes.Commands.CreateNote;
 

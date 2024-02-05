@@ -1,6 +1,6 @@
 ﻿using SuperNote.Domain.SharedKernel.AggregateRoot;
 
-namespace SuperNote.Domain.SharedKernel.Repository;
+namespace SuperNote.Domain.SharedKernel.DataAccess;
 
 public interface IRepository<TEntity> where TEntity : IAggregateRoot
 {
