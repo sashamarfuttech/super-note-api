@@ -14,7 +14,7 @@ public class GetNotesListQueryHandler : IQueryHandler<GetNotesListQuery, IReadOn
         var notes = await _notesRepository.GetALl();
         
         return notes
-            .Select(n => new NotesListItemDto(n.Id, n.Text, n.LastModified))
+            .Select(n => new NotesListItemDto(n.Id, n.NoteText.Value, n.LastModified))
             .ToList();
     }
 }

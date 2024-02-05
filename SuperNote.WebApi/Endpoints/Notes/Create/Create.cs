@@ -1,6 +1,7 @@
 ﻿using FastEndpoints;
 using MediatR;
 using SuperNote.Application.Notes.Commands.CreateNote;
+using SuperNote.WebApi.Extensions;
 
 namespace SuperNote.WebApi.Endpoints.Notes.Create;
 
@@ -20,8 +21,12 @@ public class Create(IMediator mediator) : Endpoint<CreateNoteRequest, CreateNote
 
     public override async Task HandleAsync(CreateNoteRequest req, CancellationToken ct)
     {
-        var id = await mediator.Send(new CreateNoteCommand(req.Text), ct);
+        var result = await mediator.Send(new CreateNoteCommand(req.Text), ct);
         
-        await SendOkAsync(new CreateNoteResponse(id), ct);
+        await (result.IsSuccess switch
+        {
+            true => SendOkAsync(new CreateNoteResponse(result.Value), ct),
+            false => this.SendProblemDetailsResponse(result, ct)
+        });
     }
 }

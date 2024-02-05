@@ -4,21 +4,22 @@ namespace SuperNote.Domain.Notes;
 
 public class Note : AggregateRoot
 {
-    public Note()
+    /// <summary>
+    /// Required by Entity Framework
+    /// </summary>
+    private Note()
     {
     }
     
-    public Note(string text)
+    public Note(NoteText noteText)
     {
         Id = Guid.NewGuid();
-        Text = text;
+        NoteText = noteText;
         
         RaiseDomainEvent(new NoteCreatedDomainEvent(Id));
     }
 
     public NoteId Id { get; }
-    
-    public string Text { get; } = string.Empty;
-
+    public NoteText NoteText { get; }
     public DateTime LastModified { get; }
 }
