@@ -4,13 +4,17 @@ namespace SuperNote.Domain.Notes;
 
 public class Note : AggregateRoot
 {
+    public Note()
+    {
+    }
+    
     public Note(string text)
     {
-        Id = new NoteId(Guid.NewGuid());
+        Id = Guid.NewGuid();
         Text = text;
     }
 
-    public NoteId Id { get; set; }
+    public NoteId Id { get; }
     
     public string Text { get; } = string.Empty;
 

@@ -17,4 +17,9 @@
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Notes\Commands\" />
+      <Folder Include="Notes\Queries\" />
+    </ItemGroup>
+
 </Project>

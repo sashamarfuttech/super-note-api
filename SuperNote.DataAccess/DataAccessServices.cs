@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using SuperNote.DataAccess.Database;
-using SuperNote.DataAccess.Repositories;
+using SuperNote.DataAccess.DataAccess;
+using SuperNote.DataAccess.Notes;
 using SuperNote.Domain.Notes;
 using SuperNote.Domain.SharedKernel.Repository;
 

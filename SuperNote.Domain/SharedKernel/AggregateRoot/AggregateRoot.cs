@@ -1,5 +1,5 @@
 ﻿namespace SuperNote.Domain.SharedKernel.AggregateRoot;
 
-public class AggregateRoot : IAggregateRoot
+public abstract class AggregateRoot : IAggregateRoot
 {
 }

@@ -1,4 +1,4 @@
-﻿using SuperNote.Domain.SharedKernel.Errors;
+﻿using SuperNote.Domain.SharedKernel.ErrorHandling;
 
 namespace SuperNote.Domain.Notes;
 

@@ -10,7 +10,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddFastEndpoints();
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(WebApi, Application));
 
-
 builder.Services.SwaggerDocument(o =>
 {
     o.ShortSchemaNames = true;
@@ -25,6 +24,7 @@ var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
+    
 }
 
 app.UseFastEndpoints(x => x.Errors.UseProblemDetails());
