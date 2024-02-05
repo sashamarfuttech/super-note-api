@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <PackageReference Include="FluentResults" Version="3.15.2" />
+      <PackageReference Include="MediatR" Version="12.2.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
       <PackageReference Include="Optional" Version="5.0.0-alpha" />
     </ItemGroup>

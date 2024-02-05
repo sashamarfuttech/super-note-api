@@ -12,6 +12,8 @@ public class Note : AggregateRoot
     {
         Id = Guid.NewGuid();
         Text = text;
+        
+        RaiseDomainEvent(new NoteCreatedDomainEvent(Id));
     }
 
     public NoteId Id { get; }

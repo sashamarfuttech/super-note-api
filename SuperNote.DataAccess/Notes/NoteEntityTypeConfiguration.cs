@@ -10,7 +10,7 @@ internal class NoteEntityTypeConfiguration : IEntityTypeConfiguration<Note>
     {
         builder.HasKey(b => b.Id);
         
-        builder.Property(e => e.Id).HasConversion(id => id.Id, value => new NoteId(value));
+        builder.Property(e => e.Id).HasConversion(id => id.Value, value => new NoteId(value));
 
         builder.Property(x => x.Text);
         
