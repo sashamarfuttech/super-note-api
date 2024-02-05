@@ -1,4 +1,5 @@
 ﻿using FastEndpoints;
+using FluentResults;
 using MediatR;
 using SuperNote.Application.Notes.Queries.GetNoteById;
 using SuperNote.WebApi.Extensions;
@@ -23,13 +24,10 @@ public class GetById(IMediator mediator) : Endpoint<GetNoteByIdRequest, NoteDto>
     {
         var note = await mediator.Send(new GetNoteByIdQuery(req.NoteId), ct);
 
-        if (note.IsSuccess)
+        await (note.IsSuccess switch
         {
-            await SendOkAsync(note.Value, ct);
-        }
-        else
-        {
-            await this.SendErrorResponse(note, ct);
-        }
+            true => SendOkAsync(note.Value, ct),
+            false => this.SendProblemDetailsResponse(note, ct)
+        });
     }
 }

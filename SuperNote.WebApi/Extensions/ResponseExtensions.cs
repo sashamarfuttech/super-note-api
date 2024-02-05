@@ -7,16 +7,11 @@ namespace SuperNote.WebApi.Extensions;
 
 public static class ResponseExtensions
 {
-    public static async Task SendErrorResponse<T>(
+    public static async Task SendProblemDetailsResponse<T>(
         this IEndpoint ep,
         Result<T> result,
         CancellationToken ct)
     {
-        if (result.IsSuccess)
-        {
-            throw new ArgumentException("The Result must be in a failed state.");
-        }
-
         var domainError = (DomainError)result.Errors.First();
 
         var errorCode = (string)domainError.Metadata[DomainError.ErrorCodeLiteral];
