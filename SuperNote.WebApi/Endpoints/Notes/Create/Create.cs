@@ -8,7 +8,7 @@ public class Create(IMediator mediator) : Endpoint<CreateNoteRequest, CreateNote
 {
     public override void Configure()
     {
-        Get(ApiRoutes.Notes.Create);
+        Post(ApiRoutes.Notes.Create);
         AllowAnonymous();
     }
 
