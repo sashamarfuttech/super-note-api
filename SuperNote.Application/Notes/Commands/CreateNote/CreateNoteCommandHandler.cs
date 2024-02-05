@@ -1,4 +1,5 @@
-﻿using SuperNote.Application.Abstractions.Commands;
+﻿using Microsoft.Extensions.Logging;
+using SuperNote.Application.Abstractions.Commands;
 using SuperNote.Domain.Notes;
 using SuperNote.Domain.SharedKernel.Repository;
 
