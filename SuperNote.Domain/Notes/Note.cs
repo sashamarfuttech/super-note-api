@@ -1,4 +1,4 @@
-﻿using SuperNote.Domain.SharedKernel.AggregateRoot;
+﻿using SuperNote.Domain.Abstractions.AggregateRoot;
 
 namespace SuperNote.Domain.Notes;
 

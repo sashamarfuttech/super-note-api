@@ -1,4 +1,4 @@
-﻿namespace SuperNote.Domain.SharedKernel.ErrorHandling;
+﻿namespace SuperNote.Domain.Abstractions.ErrorHandling;
 
 public enum ErrorType
 {

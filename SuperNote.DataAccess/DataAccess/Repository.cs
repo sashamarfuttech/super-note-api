@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SuperNote.Domain.SharedKernel.AggregateRoot;
-using SuperNote.Domain.SharedKernel.DataAccess;
+using SuperNote.Domain.Abstractions.AggregateRoot;
+using SuperNote.Domain.Abstractions.DataAccess;
 
 namespace SuperNote.DataAccess.DataAccess;
 

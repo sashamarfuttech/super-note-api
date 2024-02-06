@@ -1,4 +1,4 @@
-﻿using SuperNote.Domain.SharedKernel.DomainEvents;
+﻿using SuperNote.Domain.Abstractions.DomainEvents;
 
 namespace SuperNote.Domain.Notes;
 

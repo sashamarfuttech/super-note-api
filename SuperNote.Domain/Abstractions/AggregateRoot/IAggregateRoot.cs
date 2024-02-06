@@ -1,6 +1,6 @@
-﻿using SuperNote.Domain.SharedKernel.DomainEvents;
+﻿using SuperNote.Domain.Abstractions.DomainEvents;
 
-namespace SuperNote.Domain.SharedKernel.AggregateRoot;
+namespace SuperNote.Domain.Abstractions.AggregateRoot;
 
 public interface IAggregateRoot
 {

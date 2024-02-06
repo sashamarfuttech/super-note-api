@@ -1,6 +1,6 @@
-﻿using SuperNote.Domain.SharedKernel.AggregateRoot;
+﻿using SuperNote.Domain.Abstractions.AggregateRoot;
 
-namespace SuperNote.Domain.SharedKernel.DataAccess;
+namespace SuperNote.Domain.Abstractions.DataAccess;
 
 public interface IRepository<TEntity> where TEntity : IAggregateRoot
 {

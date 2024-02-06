@@ -1,5 +1,5 @@
 ﻿using Optional;
-using SuperNote.Domain.SharedKernel.DataAccess;
+using SuperNote.Domain.Abstractions.DataAccess;
 
 namespace SuperNote.Domain.Notes;
 

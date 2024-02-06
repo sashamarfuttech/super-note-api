@@ -1,6 +1,6 @@
 ﻿using FluentResults;
 
-namespace SuperNote.Domain.SharedKernel.ErrorHandling;
+namespace SuperNote.Domain.Abstractions.ErrorHandling;
 
 public class DomainError : Error
 {

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace SuperNote.Domain.SharedKernel.DomainEvents;
+namespace SuperNote.Domain.Abstractions.DomainEvents;
 
 public interface IDomainEvent : INotification
 {

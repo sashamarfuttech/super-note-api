@@ -1,7 +1,7 @@
 ﻿using FastEndpoints;
 using FluentResults;
 using FluentValidation.Results;
-using SuperNote.Domain.SharedKernel.ErrorHandling;
+using SuperNote.Domain.Abstractions.ErrorHandling;
 
 namespace SuperNote.WebApi.Extensions;
 
