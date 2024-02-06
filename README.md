@@ -67,9 +67,11 @@ This is the entry point to the application. It implements a set of REST APIs tha
 
 ## Key Patterns
 
-1. REPR Design Pattern
-2. Result Pattern
-3. Repository / Unit of Work
+[REPR Design Pattern](https://deviq.com/design-patterns/repr-design-pattern)
 
+REPR stands for Request, an Endpoint, and a Response. The pattern enforces the Single Responsibility Principle for your endpoints. The basic idea is that each request is handled by a separate class.
 
+[Result Pattern](https://github.com/altmann/FluentResults)
+
+There are two fundamental ways for handling invalid input in your domain: throw an exception or return an object indicating the error. The SuperNote application uses the second approach, returning a Result<T> object from the domain and application layers. You can read about the reasons for choosing one or the other [here](https://enterprisecraftsmanship.com/posts/exceptions-for-flow-control/), [here](https://www.silasreinagel.com/blog/2018/06/18/result-vs-exception/) or [here](https://softwareengineering.stackexchange.com/questions/405038/result-object-vs-throwing-exceptions).
 
