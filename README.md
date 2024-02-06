@@ -41,16 +41,9 @@ The application uses a PostgreSQL database, but it can be easily changed it in t
 
 The project implements a clean architecture. Here's its structure:
 
-- super-note (solution)
-  - src (folder)
-    - Infrastructure (folder)
-      - SuperNote.DataAccess (csproj)
-    - SuperNote.Application (csproj)
-    - SuperNote.Domain (csproj)
-    - SuperNote.WebApi (csproj)
-  - tests (folder)
-    - SuperNote.Application.Tests (csproj)
-    - SuperNote.Domain.Tests (csproj)
+![Screenshot 2024-02-06 193709](https://github.com/sashamarfuttech/super-note-api/assets/158445722/c7b309dc-07b8-42cc-8982-33ec50e90cd1)
+
+Now let's talk about each project separately.
 
 **SuperNote.Domain**
 
