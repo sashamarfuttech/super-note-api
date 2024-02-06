@@ -4,7 +4,9 @@
 If the project has been useful to you, please give it a star. Thank you!
 
 ## Description
-SuperNote is the initial version of a note-taking app (such as [OneNote](https://www.onenote.com/) or [Notion](https://www.notion.so/)).
+SuperNote is the initial version of a note-taking app (such as [OneNote](https://www.onenote.com/) or [Notion](https://www.notion.so/)). There is no front-end at this time. The project contains a few REST API endpoints:
+
+![image](https://github.com/sashamarfuttech/super-note-api/assets/158445722/b1119e10-a83d-4278-a2b2-728bc6e31a3f)
 
 Technologies & Libraries:
 1. [ASP.NET Core 8.0](https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-8.0?view=aspnetcore-8.0)
@@ -16,11 +18,13 @@ Technologies & Libraries:
 
 Databases:
 1. [PostgreSQL](https://www.postgresql.org/) 
-2. Entity Framework Core 8 In-Memory Database
+2. [Entity Framework Core 8 In-Memory Database](https://learn.microsoft.com/en-us/ef/core/providers/in-memory/?tabs=dotnet-core-cli)
 
 ## How do I run the application?
  1. Check out source code from the repository.
  2. Run **SuperNote.WebApi** project.
+
+You'll see Swagger.
 
 By default, the project is configured to use the Entity Framework In Memory database. 
 So the above two steps will be enough if you want to have a quick play around with the app.
