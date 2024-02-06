@@ -30,8 +30,6 @@ public class CreateNoteCommandHandler : ICommandHandler<CreateNoteCommand, Resul
             return Result.Fail(noteText.Errors);
         }
 
-        var x = TimeProvider.System.GetLocalNow();
-        
         Note note = new (noteText.Value, _timeProvider.GetUtcNow().UtcDateTime);
         
         _notesRepository.Add(note);

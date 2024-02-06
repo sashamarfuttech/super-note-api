@@ -14,6 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperNote.DataAccess", "SuperNote.DataAccess\SuperNote.DataAccess.csproj", "{FB8F5DA8-91BD-478B-AEF7-98A6E4331AF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperNote.Domain.Tests", "SuperNote.Domain.Tests\SuperNote.Domain.Tests.csproj", "{1BA12EC8-0B9C-4E7F-BE6E-ECA9B943413C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperNote.Application.Tests", "SuperNote.Application.Tests\SuperNote.Application.Tests.csproj", "{FD9A16E4-F8F0-429D-9894-4ACD7E63E9CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,8 @@ Global
 		{4E0292C8-4BE4-4637-964E-53A30E0264F3} = {073EC3EA-6DDD-43D7-8EF1-69B946DA06BF}
 		{183AC178-5566-418C-AECC-4773866FD7D6} = {073EC3EA-6DDD-43D7-8EF1-69B946DA06BF}
 		{FB8F5DA8-91BD-478B-AEF7-98A6E4331AF4} = {183AC178-5566-418C-AECC-4773866FD7D6}
+		{1BA12EC8-0B9C-4E7F-BE6E-ECA9B943413C} = {C46E42A8-6BE2-4640-BD41-72F287FB718C}
+		{FD9A16E4-F8F0-429D-9894-4ACD7E63E9CF} = {C46E42A8-6BE2-4640-BD41-72F287FB718C}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{64CAC520-F0F0-4A1C-86FF-9639B3BDAC30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -43,5 +49,13 @@ Global
 		{FB8F5DA8-91BD-478B-AEF7-98A6E4331AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB8F5DA8-91BD-478B-AEF7-98A6E4331AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB8F5DA8-91BD-478B-AEF7-98A6E4331AF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BA12EC8-0B9C-4E7F-BE6E-ECA9B943413C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BA12EC8-0B9C-4E7F-BE6E-ECA9B943413C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BA12EC8-0B9C-4E7F-BE6E-ECA9B943413C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BA12EC8-0B9C-4E7F-BE6E-ECA9B943413C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD9A16E4-F8F0-429D-9894-4ACD7E63E9CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD9A16E4-F8F0-429D-9894-4ACD7E63E9CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD9A16E4-F8F0-429D-9894-4ACD7E63E9CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD9A16E4-F8F0-429D-9894-4ACD7E63E9CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
