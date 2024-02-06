@@ -18,7 +18,7 @@ builder.Services.SwaggerDocument(o =>
 builder.Services
     .AddDomainServices()
     .AddApplicationServices()
-    .AddDataAccessServices();
+    .AddDataAccessServices(builder.Configuration.GetValue<string>("Sql:ConnectionString"));
 
 var app = builder.Build();
 

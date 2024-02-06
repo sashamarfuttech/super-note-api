@@ -11,10 +11,11 @@ public class Note : AggregateRoot
     {
     }
     
-    public Note(NoteText noteText)
+    public Note(NoteText noteText, DateTime lastModified)
     {
         Id = Guid.NewGuid();
         NoteText = noteText;
+        LastModified = lastModified;
         
         RaiseDomainEvent(new NoteCreatedDomainEvent(Id));
     }

@@ -27,7 +27,7 @@ public class CreateNoteCommandHandler : ICommandHandler<CreateNoteCommand, Resul
             return Result.Fail(noteText.Errors);
         }
         
-        Note note = new (noteText.Value);
+        Note note = new (noteText.Value, DateTime.UtcNow);
         
         _notesRepository.Add(note);
 
