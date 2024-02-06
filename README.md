@@ -8,10 +8,11 @@ SuperNote is the initial version of a note-taking app (such as [OneNote](https:/
 
 Technologies & Libraries:
 1. [ASP.NET Core 8.0](https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-8.0?view=aspnetcore-8.0)
-2. [FastEndpoints](https://fast-endpoints.com/)
 3. [Entity Framework Core 8](https://learn.microsoft.com/en-us/ef/core/what-is-new/ef-core-8.0/whatsnew)
+2. [FastEndpoints 5.22.0](https://fast-endpoints.com/)
 4. [MediatR 12.2.0](https://github.com/jbogard/MediatR)
 5. [FluentResults 3.15](https://github.com/altmann/FluentResults)
+6. [Optional 4.0](https://github.com/nlkl/Optional)
 
 Databases:
 1. [PostgreSQL](https://www.postgresql.org/) 
@@ -32,32 +33,43 @@ If you want to use a real database, then
 
 The application uses a PostgreSQL database, but it can be easily changed it in the DataAccessServices.cs file if needed.
 
-## Application Architecture
+## Project Structure
 
-The project implements a clean architecture.
+The project implements a clean architecture. Here's its structure:
+
+- super-note (solution)
+  - src (folder)
+    - Infrastructure (folder)
+      - SuperNote.DataAccess (csproj)
+    - SuperNote.Application (csproj)
+    - SuperNote.Domain (csproj)
+    - SuperNote.WebApi (csproj)
+  - tests (folder)
+    - SuperNote.Application.Tests (csproj)
+    - SuperNote.Domain.Tests (csproj)
 
 **SuperNote.Domain**
 
-//TODO:
+The domain layer contains domain entities, domain events, repository interfaces, domain errors, and other core application logic.
 
-**SuperNote.Application**
+**SuperNote.Application (Use cases)**
 
-//TODO:
+The application layer implements the SuperNote application use cases using Commands and Queries.
+It also implements event handlers for domain events.
 
 **SuperNote.Infrastructure**
 
-//TODO:
+Currently, the infrastructure layer contains a single project, which is DataAccess. This project implements repositories, migrations, and other things related to data access.
 
-**SuperNote.WebApi**
+**SuperNote.WebApi (Presentation)**
 
-//TODO:
+This is the entry point to the application. It implements a set of REST APIs that clients can use to interact with the application.
 
-## Implementation of Key Patterns
+## Key Patterns
 
-//TODO: 
+1. REPR Design Pattern
+2. Result Pattern
+3. Repository / Unit of Work
 
-## Error Handling
-
-//TODO:
 
 
