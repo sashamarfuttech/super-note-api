@@ -2,5 +2,6 @@
 
 public enum ErrorType
 {
-    NotFound = 0
+    NotFound = 0,
+    InvalidData = 1
 }

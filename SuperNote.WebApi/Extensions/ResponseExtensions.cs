@@ -17,6 +17,7 @@ public static class ResponseExtensions
         var statusCode = errorType switch
         {
             ErrorType.NotFound => StatusCodes.Status404NotFound,
+            ErrorType.InvalidData => StatusCodes.Status400BadRequest,
             _ => StatusCodes.Status500InternalServerError
         };
 
