@@ -6,7 +6,7 @@ If the project has been useful to you, please give it a star. Thank you!
 ## Description
 SuperNote is the initial version of a note-taking app (such as [OneNote](https://www.onenote.com/) or [Notion](https://www.notion.so/)). There is no front-end at this time. The project contains a few REST API endpoints:
 
-![image](https://github.com/sashamarfuttech/super-note-api/assets/158445722/b1119e10-a83d-4278-a2b2-728bc6e31a3f)
+![Screenshot 2024-02-06 193709](https://github.com/sashamarfuttech/super-note-api/assets/158445722/6424019d-ee09-4534-b87b-695aed1206af)
 
 Technologies & Libraries:
 1. [ASP.NET Core 8.0](https://learn.microsoft.com/en-us/aspnet/core/release-notes/aspnetcore-8.0?view=aspnetcore-8.0)
