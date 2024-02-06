@@ -9,13 +9,16 @@ public class CreateNoteCommandHandler : ICommandHandler<CreateNoteCommand, Resul
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly INotesRepository _notesRepository;
-
+    private readonly TimeProvider _timeProvider;
+    
     public CreateNoteCommandHandler(
         IUnitOfWork unitOfWork,
-        INotesRepository notesRepository)
+        INotesRepository notesRepository,
+        TimeProvider timeProvider)
     {
         _unitOfWork = unitOfWork;
         _notesRepository = notesRepository;
+        _timeProvider = timeProvider;
     }
     
     public async Task<Result<Guid>> Handle(CreateNoteCommand request, CancellationToken cancellationToken)
@@ -26,8 +29,10 @@ public class CreateNoteCommandHandler : ICommandHandler<CreateNoteCommand, Resul
         {
             return Result.Fail(noteText.Errors);
         }
+
+        var x = TimeProvider.System.GetLocalNow();
         
-        Note note = new (noteText.Value, DateTime.UtcNow);
+        Note note = new (noteText.Value, _timeProvider.GetUtcNow().UtcDateTime);
         
         _notesRepository.Add(note);
 

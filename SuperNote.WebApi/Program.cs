@@ -15,6 +15,8 @@ builder.Services.SwaggerDocument(o =>
     o.ShortSchemaNames = true;
 });
 
+builder.Services.AddSingleton(TimeProvider.System);
+
 builder.Services
     .AddDomainServices()
     .AddApplicationServices()
