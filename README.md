@@ -2,3 +2,8 @@
 
 ## Give a Star! :star:
 If the project has been useful to you, please give it a star. Thank you!
+
+## Description
+SuperNote is the initial version of a note-taking app (such as [OneNote](https://www.onenote.com/) or [Notion](https://www.notion.so/)).
+
+
