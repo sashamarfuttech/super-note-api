@@ -61,9 +61,13 @@ The domain layer contains domain entities, domain events, repository interfaces,
 The application layer implements the SuperNote application use cases using Commands and Queries.
 It also implements event handlers for domain events.
 
+In addition, the application layer is where **abstractions** for caching, messaging, authentication, email notifications, and so on are placed.
+
 **SuperNote.Infrastructure**
 
 Currently, the infrastructure layer contains a single project, which is DataAccess. This project implements repositories, migrations, and other things related to data access.
+
+In addition, the infrastructure layer must implement the caching, messaging, authentication, email notification abstractions that are defined in the application layer. 
 
 **SuperNote.WebApi (Presentation)**
 
