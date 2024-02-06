@@ -1,6 +1,6 @@
 ﻿using MediatR;
+using SuperNote.Domain.Abstractions.Aggregates;
 using SuperNote.Domain.Abstractions.DomainEvents;
-using SuperNote.Domain.Abstractions.AggregateRoot;
 using SuperNote.Domain.SharedKernel.DataAccess;
 
 namespace SuperNote.DataAccess.DataAccess;
@@ -32,15 +32,15 @@ public class UnitOfWork : IUnitOfWork
         
         domainEntities.ForEach(d => d.ClearDomainEvents());
 
-        List<IAggregateRoot> GetDomainEntities(SuperNoteContext context) =>
+        List<AggregateRoot> GetDomainEntities(SuperNoteContext context) =>
             context
                 .ChangeTracker
-                .Entries<IAggregateRoot>()
+                .Entries<AggregateRoot>()
                 .Select(e => e.Entity)
                 .ToList();
 
-        List<IDomainEvent> GetDomainEvents(List<IAggregateRoot> entities) =>
-            domainEntities
+        List<IDomainEvent> GetDomainEvents(List<AggregateRoot> entities) =>
+            entities
                 .Where(e => e.DomainEvents.Any())
                 .SelectMany(e => e.DomainEvents)
                 .ToList();

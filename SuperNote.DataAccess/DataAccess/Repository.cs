@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SuperNote.Domain.Abstractions.AggregateRoot;
+using SuperNote.Domain.Abstractions.Aggregates;
 using SuperNote.Domain.Abstractions.DataAccess;
 
 namespace SuperNote.DataAccess.DataAccess;
