@@ -1,5 +1,4 @@
 ﻿using FastEndpoints;
-using FluentResults;
 using MediatR;
 using SuperNote.Application.Notes.Queries.GetNoteById;
 using SuperNote.Domain.Notes;

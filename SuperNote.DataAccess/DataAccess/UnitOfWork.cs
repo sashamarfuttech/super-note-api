@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using SuperNote.Domain.Abstractions.Aggregates;
+using SuperNote.Domain.Abstractions.DataAccess;
 using SuperNote.Domain.Abstractions.DomainEvents;
-using SuperNote.Domain.SharedKernel.DataAccess;
 
 namespace SuperNote.DataAccess.DataAccess;
 

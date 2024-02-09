@@ -1,6 +1,4 @@
-﻿
-
-using SuperNote.Domain.Abstractions.Aggregates;
+﻿using SuperNote.Domain.Abstractions.Aggregates;
 
 namespace SuperNote.Domain.Abstractions.DataAccess;
 

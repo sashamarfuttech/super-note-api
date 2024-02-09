@@ -1,7 +1,7 @@
 ﻿using FluentResults;
 using SuperNote.Application.Abstractions.Commands;
+using SuperNote.Domain.Abstractions.DataAccess;
 using SuperNote.Domain.Notes;
-using SuperNote.Domain.SharedKernel.DataAccess;
 
 namespace SuperNote.Application.Notes.Commands.CreateNote;
 

@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using SuperNote.Domain.Notes;
 
-namespace SuperNote.Application.Notes.EventHandlers;
+namespace SuperNote.Application.Notes.Events;
 
 public sealed class NoteCreatedDomainEventHandler : INotificationHandler<NoteCreatedDomainEvent>
 {

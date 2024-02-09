@@ -1,4 +1,4 @@
-﻿namespace SuperNote.Domain.SharedKernel.DataAccess;
+﻿namespace SuperNote.Domain.Abstractions.DataAccess;
 
 public interface IUnitOfWork
 {
