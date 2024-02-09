@@ -39,7 +39,7 @@ public class GetNoteByIdQueryHandlerTests
         var noteText = NoteText.Create("text");
         var note = new Note(noteText.Value, DateTime.Now);
         
-        NoteDto expectedNoteDto = new (note.Id, note.NoteText.Value, note.LastModified);
+        NoteDto expectedNoteDto = new (note.Id.Value, note.NoteText.Value, note.LastModified);
         
         _notesRepositoryMock
             .Setup(x => x.GetByIdAsync(note.Id))

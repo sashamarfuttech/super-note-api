@@ -36,6 +36,6 @@ public class CreateNoteCommandHandler : ICommandHandler<CreateNoteCommand, Resul
 
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        return Result.Ok<Guid>(note.Id);
+        return Result.Ok<Guid>(note.Id.Value);
     }
 }

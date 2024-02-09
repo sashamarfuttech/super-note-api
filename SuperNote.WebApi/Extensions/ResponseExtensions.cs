@@ -12,6 +12,11 @@ public static class ResponseExtensions
         Result<T> result,
         CancellationToken ct)
     {
+        if (result.IsSuccess)
+        {
+            throw new ArgumentException("The Result<T> object must be in a failed state.");
+        }
+
         var errorType = GetErrorType(result.Errors.First());
 
         var statusCode = errorType switch
@@ -21,7 +26,7 @@ public static class ResponseExtensions
             _ => StatusCodes.Status500InternalServerError
         };
 
-        var failures = ToValidationFailures(result.Errors);
+        var failures = ToFailures(result.Errors);
 
         await ep.HttpContext.Response.SendErrorsAsync(
             failures,
@@ -29,17 +34,13 @@ public static class ResponseExtensions
             cancellation: ct);
 
         static ErrorType GetErrorType(IError error)
-        {
-            var domainError = (DomainError)error;
-            var type = (ErrorType)domainError.Metadata[nameof(ErrorType)];
-            return type;
-        }
+            => (ErrorType)error.Metadata[nameof(ErrorType)];
 
-        static List<ValidationFailure> ToValidationFailures(List<IError> errors)
+        static List<ValidationFailure> ToFailures(List<IError> errors)
             => errors.Select(e =>
             {
-                var errorCode = e.Metadata[DomainError.ErrorCodeLiteral].ToString();
-                return new ValidationFailure(errorCode, e.Message);
+                var errorCode = e.Metadata[DomainError.ErrorCodeLiteral];
+                return new ValidationFailure(errorCode.ToString(), e.Message);
             }).ToList();
     }
 }

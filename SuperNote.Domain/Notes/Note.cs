@@ -13,7 +13,7 @@ public class Note : AggregateRoot
     
     public Note(NoteText noteText, DateTime lastModified)
     {
-        Id = Guid.NewGuid();
+        Id = NoteId.New();
         NoteText = noteText;
         LastModified = lastModified;
         

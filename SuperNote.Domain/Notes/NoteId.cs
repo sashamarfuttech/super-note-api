@@ -2,6 +2,5 @@
 
 public record struct NoteId(Guid Value)
 {
-    public static implicit operator Guid(NoteId noteId) => noteId.Value;
-    public static implicit operator NoteId(Guid guid) => new (guid);
+    public static NoteId New() => new NoteId(Guid.NewGuid());
 }

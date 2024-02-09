@@ -2,4 +2,4 @@
 
 namespace SuperNote.Domain.Notes;
 
-public record NoteCreatedDomainEvent(Guid NoteId) : IDomainEvent;
+public record NoteCreatedDomainEvent(NoteId NoteId) : IDomainEvent;

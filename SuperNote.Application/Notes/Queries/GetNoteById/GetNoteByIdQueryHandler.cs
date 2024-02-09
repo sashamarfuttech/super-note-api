@@ -24,7 +24,7 @@ public class GetNoteByIdQueryHandler : IQueryHandler<GetNoteByIdQuery, Result<No
 
         var note = noteOption.ValueOrDefault();
         
-        NoteDto noteDto = new (note.Id, note.NoteText.Value, note.LastModified);
+        NoteDto noteDto = new (note.Id.Value, note.NoteText.Value, note.LastModified);
         
         return Result.Ok(noteDto);
     }
