@@ -10,10 +10,10 @@ namespace SuperNote.DataAccess;
 public static class DataAccessServices
 {
     private const string InMemoryDatabaseName = "SuperNoteInMemoryDatabase";
-    
+
     public static IServiceCollection AddDataAccessServices(this IServiceCollection services, string? connectionString)
     {
-        if (connectionString is not null)
+        if (!string.IsNullOrEmpty(connectionString))
         {
             services.AddDbContext<SuperNoteContext>(options => options.UseNpgsql(connectionString));
         }
@@ -21,7 +21,7 @@ public static class DataAccessServices
         {
             services.AddDbContext<SuperNoteContext>(options => options.UseInMemoryDatabase(InMemoryDatabaseName));
         }
-        
+
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped<INotesRepository, NotesRepository>();
 
