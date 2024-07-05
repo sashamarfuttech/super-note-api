@@ -3,8 +3,6 @@
 ## Give a Star! :star:
 If the project has been useful to you, please give it a star. Thank you!
 
-Follow me on [Patreon](https://www.patreon.com/sashamarfut) to read my exclusive articles on software engineering. Also, consider supporting me on [Buy Me a Coffee](https://www.buymeacoffee.com/sashamarfut).
-
 ## Description
 SuperNote is the initial version of a note-taking app (such as [OneNote](https://www.onenote.com/) or [Notion](https://www.notion.so/)). There is no front-end at this time. The project contains a few REST API endpoints:
 
